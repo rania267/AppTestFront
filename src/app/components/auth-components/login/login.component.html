@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <h2 class="login100-form-title">Account Login</h2>
+
+            <form (ngSubmit)="login()" class="login100-form">
+                <div *ngIf="error" class="alert alert-info">
+                    <strong>{{ error }}{{ message }}</strong>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error': error}">
+                    <div class="input-wrap">
+                        <input class="input100" name="username" type="text" placeholder="Username" autofocus="true" [(ngModel)]="username" />
+                    </div>
+
+                    <div class="input-wrap">
+                        <input name="password" type="password" class="input100" placeholder="Password" [(ngModel)]="password" />
+                    </div>
+
+                    <input type="hidden" [name]="csrf.parameterName" [value]="csrf.token" />
+
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn" type="submit">Login</button>
+                    </div>
+
+                    <h4 class="text-center"><a class="txt2" routerLink="/forgot-password">Forget Password?</a></h4>
+                    <h4 class="text-center"><a class="txt2" routerLink="/register">Register</a></h4>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
