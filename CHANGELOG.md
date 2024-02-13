@@ -1,5 +1,6 @@
 ## [1.4.0] - 2022-05-06
 ### Updates
+### Updates
 - update to Angular 13
 - update all dependencies to match Angular 13 version
 - routing issue fixed
